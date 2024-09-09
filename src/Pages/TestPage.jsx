@@ -1,60 +1,10 @@
 import React, { useState } from "react";
 import "./Pages.css";
+import questionsData from '../data/question.json'; // Import the JSON file
 
 function TestPage() {
-  // Savollar ro'yxati va to'g'ri javoblar
-  const questions = [
-    {
-      question: "2 + 2 = ?",
-      options: ["3", "4", "5", "6"],
-      correctAnswer: "4",
-    },
-    {
-      question: "5 * 3 = ?",
-      options: ["15", "10", "8", "20"],
-      correctAnswer: "15",
-    },
-    {
-      question: "10 - 4 = ?",
-      options: ["6", "7", "5", "8"],
-      correctAnswer: "6",
-    },
-    {
-      question: "12 ÷ 4 = ?",
-      options: ["3", "4", "5", "2"],
-      correctAnswer: "3",
-    },
-    {
-      question: "9 + 6 = ?",
-      options: ["14", "13", "15", "16"],
-      correctAnswer: "15",
-    },
-    {
-      question: "7 * 8 = ?",
-      options: ["56", "64", "49", "58"],
-      correctAnswer: "56",
-    },
-    {
-      question: "16 ÷ 4 = ?",
-      options: ["4", "6", "3", "5"],
-      correctAnswer: "4",
-    },
-    {
-      question: "3 + 9 = ?",
-      options: ["11", "12", "13", "10"],
-      correctAnswer: "12",
-    },
-    {
-      question: "18 - 7 = ?",
-      options: ["10", "12", "11", "13"],
-      correctAnswer: "11",
-    },
-    {
-      question: "6 * 6 = ?",
-      options: ["36", "30", "42", "40"],
-      correctAnswer: "36",
-    },
-  ];
+  // Use the imported questions data
+  const questions = questionsData;
 
   // Javoblarni saqlash uchun state
   const [answers, setAnswers] = useState(Array(questions.length).fill(""));
@@ -69,6 +19,14 @@ function TestPage() {
 
   // Natijani tekshirish
   const checkAnswers = () => {
+    // Check if all questions have been answered
+    const allAnswered = answers.every(answer => answer !== "");
+  
+    if (!allAnswered) {
+      setResult("Iltimos, barcha savollarni javob bering.");
+      return;
+    }
+  
     let correctCount = 0;
     questions.forEach((question, index) => {
       if (question.correctAnswer === answers[index]) {
@@ -81,6 +39,7 @@ function TestPage() {
       } ta xato.`
     );
   };
+  
 
   return (
     <div className="test-page1">
@@ -106,7 +65,7 @@ function TestPage() {
               ))}
             </div>
           ))}
-          <button id="button1" onClick={checkAnswers}>Tekshirish</button>
+          <button id="button1" type="button" onClick={checkAnswers}>Tekshirish</button>
         </form>
         
         {result && <p className="result">{result}</p>}
