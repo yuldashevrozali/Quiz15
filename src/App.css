@@ -1,0 +1,64 @@
+/* App.css */
+.start-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../src/assets/bgc.png); /* Foni faylni to'g'ri yo'lini ko'rsating */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .content {
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #6b6b6b;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+  
+  .buttons {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .start-btn,
+  .results-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .start-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .results-btn {
+    background-color: #2196f3;
+  }
+
+  .buttons button{
+    width: 180px;
+    color: white;
+  }
+  
