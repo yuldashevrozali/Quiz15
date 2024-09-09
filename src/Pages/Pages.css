@@ -19,7 +19,7 @@
 }
 
 .question-block{
-    width: 220px;
+    width: 230px;
     padding-left: 20px;
     padding-right: 20px;
     /* background-color: gray; */
@@ -45,7 +45,34 @@
     background-color: rgb(38, 218, 250);
     color: white;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: 11%;
+}
+
+.result-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.retry-button, .home-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.retry-button {
+    background-color: rgb(38, 218, 250);
+}
+
+.home-button {
+    background-color: rgb(250, 38, 38);
+}
+
+.retry-button:hover, .home-button:hover {
+    opacity: 0.8;
 }
